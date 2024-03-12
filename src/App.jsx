@@ -4,8 +4,6 @@ import HomePage from "./pages/HomePage";
 import NewPage from "./pages/NewPage";
 import DiaryPage from "./pages/DiaryPage";
 import EditPage from "./pages/EditPage";
-import Button from "./components/Button";
-import Header from "./components/Header";
 import React, { useReducer, useRef } from "react";
 
 const reducer = (state, action) => {
@@ -41,8 +39,40 @@ const reducer = (state, action) => {
 export const DiaryStateContext = React.createContext();
 export const DiaryDispatchContext = React.createContext();
 
+const dummyData = [
+  {
+    id: 1,
+    emotion: 1,
+    content: "1번 일기",
+    date: 1710244575679,
+  },
+  {
+    id: 2,
+    emotion: 2,
+    content: "2번 일기",
+    date: 1710244575680,
+  },
+  {
+    id: 3,
+    emotion: 3,
+    content: "3번 일기",
+    date: 1710244575681,
+  },
+  {
+    id: 4,
+    emotion: 4,
+    content: "4번 일기",
+    date: 1710244575682,
+  },
+  {
+    id: 5,
+    emotion: 5,
+    content: "5번 일기",
+    date: 1710244575683,
+  },
+];
 function App() {
-  const [data, dispatch] = useReducer(reducer, []);
+  const [data, dispatch] = useReducer(reducer, dummyData);
 
   const dataId = useRef(0);
 
